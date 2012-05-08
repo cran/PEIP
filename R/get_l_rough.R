@@ -1,7 +1,7 @@
 get_l_rough <-
 function(n,deg)
   {
-    require(Matrix)
+   ##  require(Matrix)
     
     if(deg < 0 | floor(deg) != deg)
       {
@@ -29,14 +29,14 @@ function(n,deg)
       }
 
     dn=n-deg;
-    L=sparseMatrix(i = n-deg, j= n, x=0);
+    L=Matrix::sparseMatrix(i = n-deg, j= n, x=0);
 
     ## % add the ith element of df to L i-1 elements to the right of the diagonal
     for(i in 1:(deg+1))
       {
 
         
-        L=L+sparseMatrix(i=1:(n-deg),
+        L=L+Matrix::sparseMatrix(i=1:(n-deg),
           j= c(1:dn)+i-1,
           x = df[i]*rep(1,length=dn),
           dims=c(dn,n)   );

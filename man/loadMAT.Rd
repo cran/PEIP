@@ -6,11 +6,12 @@
   to get R-objects
 }
 \usage{
-loadMAT(fn)
+loadMAT(fn, pos=1)
 }
 \arguments{
   \item{fn}{file name of MATfile
-}
+  }
+  \item{pos}{ integer, position in search path, default=1 }
 }
 \details{Program reads in previously saved mat-files and extracts the
   data, and renames the variables to match the book.

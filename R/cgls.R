@@ -2,7 +2,7 @@ cgls <-
 function( Gmat,dee,niter)
 {
 
-  require(Matrix)
+ ##  
   
 ###  Figure out problem size.
 

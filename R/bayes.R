@@ -3,15 +3,15 @@ function( G,mprior,covm,d,covd)
 {
 
   
-  covmp=inv( t(G) %*% inv(covd) %*% G + inv(covm)  )
+  covmp=pracma::inv( t(G) %*% pracma::inv(covd) %*% G + pracma::inv(covm)  )
 ### 
 ###  This takes care of any lack of symmetry in covmp.
 ### 
   covmp=(covmp+t(covmp) )/2
   
-  covd12=sqrtm(inv(covd))$B
+  covd12=pracma::sqrtm( pracma::inv(covd) )$B
   
-  covm12=sqrtm(inv(covm))$B
+  covm12=pracma::sqrtm( pracma::inv(covm) )$B
   
   A=rbind(covd12%*%G,  covm12)
 

@@ -1,5 +1,5 @@
 loadMAT <-
-function(fn)
+function(fn, pos=1)
   {
     load(fn)
 
@@ -14,7 +14,7 @@ function(fn)
 
     for(i in 1:length(NG))
       {
-        assign(NG[i],GIMPUT[[i]],  pos=1 )
+        assign(NG[i],GIMPUT[[i]],  pos=pos )
       }
 
 

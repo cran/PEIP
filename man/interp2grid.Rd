@@ -14,7 +14,9 @@
   class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package).
 }
 
-\usage{ interp2grid(mat,xout,yout,xin=NULL,yin=NULL,type=2) }
+\usage{
+interp2grid(mat,xout,yout,xin=NULL,yin=NULL,type=2)
+}
 
 \arguments{
 	\item{mat}{a matrix of data that can be a raster matrix of class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package)

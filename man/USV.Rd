@@ -16,7 +16,11 @@ USV(G)
   matlab convention.
 }
 \value{
-  Side effects
+  list:
+  \item{U}{Matrix}
+  \item{S}{Matrix, singular values}
+  \item{V}{Matrix}
+  
 }
 
 \author{
@@ -32,9 +36,9 @@ Jonathan M. Lees<jonathan.lees@unc.edu>
  hilbert <- function(n) { i <- 1:n; 1 / outer(i - 1, i, "+") }
      X <- hilbert(9)[,1:6]
      
-USV(X)
+h = USV(X)
 
-print(U)
+print( h$U )
 
 
 }

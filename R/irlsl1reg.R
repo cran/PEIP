@@ -2,7 +2,7 @@ irlsl1reg <-
 function( G,d,L,alpha,maxiter=100,tolx=1.0e-4,tolr=1.0e-6)
 {
 
-  require(Matrix)
+  ##
 
  
 ###  unchanging constants in the system that is solved repeatedly

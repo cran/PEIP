@@ -1,5 +1,6 @@
 # Export all names
 exportPattern(".")
 useDynLib(PEIP)
-
-
+import(bvls, Matrix)
+importFrom(pracma, rem, inv, sqrtm)
+importFrom(RSEIS, logspace)

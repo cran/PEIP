@@ -1,8 +1,8 @@
 blf2 <-
 function(A,b,c,delta,l,u)
 {
-  require(bvls)
-  ZEE = bvls(A,b,l,u)
+ ##  require(bvls)
+  ZEE = bvls::bvls(A,b,l,u)
   x0=ZEE$x
   gamma0=t(c) %*% x0
   alpha=1.0e-3
@@ -28,7 +28,7 @@ function(A,b,c,delta,l,u)
   G=rbind( A ,  alpha %*% t(c) )
   
   d=c(b , alpha*gamma)
-   ZEE = bvls(G,d,l,u)
+   ZEE = bvls::bvls(G,d,l,u)
   xgamma=ZEE$x
   
   xgammanorm=Vnorm( A %*% xgamma - b)
@@ -44,7 +44,7 @@ function(A,b,c,delta,l,u)
       
       d=c(b,  alpha%*%gamma)
 
-      ZEE = bvls(G,d,l,u)
+      ZEE = bvls::bvls(G,d,l,u)
       xgamma=ZEE$x
       
       xgammanorm=Vnorm(A %*% xgamma - b)
@@ -63,7 +63,7 @@ function(A,b,c,delta,l,u)
       G=rbind(A,  alpha%*% t(c) ) 
       d=c( b,  alpha %*% gamma)
 
-      ZEE = bvls(G,d,l,u)
+      ZEE = bvls::bvls(G,d,l,u)
       xgamma=ZEE$x
       xgammanorm=Vnorm(A %*% xgamma-b)
       if(xgammanorm > delta)
@@ -80,7 +80,7 @@ function(A,b,c,delta,l,u)
   gamma=gamma0+left
   G=rbind(A , alpha %*% t(c)) 
   d=c(b,  alpha%*% gamma)
-  ZEE  =   bvls(G,d,l,u)
+  ZEE  =   bvls::bvls(G,d,l,u)
   xmax=ZEE$x
   cmax=t(c) %*% xmax
 
@@ -92,7 +92,7 @@ function(A,b,c,delta,l,u)
   gamma=gamma0-step
   G=rbind(A,  alpha%*% t(c) )
   d=c( b,  alpha %*% gamma )
-  ZEE = bvls(G,d,l,u)
+  ZEE = bvls::bvls(G,d,l,u)
   xgamma=ZEE$x
   xgammanorm=Vnorm(A %*% xgamma-b)
 
@@ -106,7 +106,7 @@ function(A,b,c,delta,l,u)
       G=rbind(A,  alpha %*% t(c) )
       d=  c(b,  alpha %*% gamma)
 
-      ZEE = bvls(G,d,l,u)
+      ZEE = bvls::bvls(G,d,l,u)
       xgamma=ZEE$x
       xgammanorm=Vnorm(A*xgamma-b)
     } 
@@ -120,7 +120,7 @@ function(A,b,c,delta,l,u)
       G= rbind(A ,alpha %*% t(c) )
       d=c(b,  alpha %*% gamma)
 
-      ZEE =bvls(G,d,l,u)
+      ZEE =bvls::bvls(G,d,l,u)
       xgamma= ZEE$x
       xgammanorm=Vnorm(A %*% xgamma - b )
       if (xgammanorm > delta)
@@ -138,7 +138,7 @@ function(A,b,c,delta,l,u)
   G=rbind( A,  alpha %*% t(c) )
   d=c(b,  alpha %*% gamma)
 
-  ZEE = bvls(G,d,l,u)
+  ZEE = bvls::bvls(G,d,l,u)
   xmin=ZEE$x
   cmin=t(c) %*% xmin
 

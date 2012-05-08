@@ -2,8 +2,8 @@ occam <-
 function( afun,ajac,L,d,m0,delta)
 {
   #############   for the condition number
-  library(pracma)
-  library(Matrix)
+####  library(pracma)
+####  library(Matrix)
 
   m=m0
   oldm=rep(0,length(m))
@@ -42,7 +42,7 @@ function( afun,ajac,L,d,m0,delta)
 ###  search to the range from 1.0e-20 to 1.  This seems to work well in
 ###  practice, but might need to be adjusted for a particular problem.
 
-      alphas=logspace(-20,0,100)
+      alphas=RSEIS::logspace(-20,0,100)
 
       chis = rep(0, length=100)
       
@@ -52,7 +52,7 @@ function( afun,ajac,L,d,m0,delta)
           M=t(J) %*% J +alphas[i]^2 * t(L) %*% L
 
 ###  if M is not terribly conditioned
-          if( condest(M)$est < 1.0e15  )
+          if( Matrix::condest(M)$est < 1.0e15  )
             {
               m= as.vector( solve( t(J)%*%J+alphas[i]^2*t(L)%*%L  ) %*%   t(J) %*% dhat )
 
