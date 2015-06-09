@@ -53,8 +53,8 @@ lx=.Fortran('LSQR',
       acond=as.double(acond),
       rrnorm=as.double(rrnorm),
       arnorm=as.double(arnorm),
-      xnorm=as.double(xnorm))
-return(list(x=lx$x,itn=lx$itn,xnorm=lx$xnorm,rnorm=lx$rrnorm))
+      xnorm=as.double(xnorm), package='PEIP')
+return(list(x=lx$x,itn=lx$itn,xnorm=lx$xnorm,rnorm=lx$rrnorm, arnorm=lx$arnorm, acond=lx$acond, anorm=lx$anorm, istop=lx$istop ))
 }
 
 

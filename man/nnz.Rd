@@ -19,4 +19,12 @@ nnz(h)
 Jonathan M. Lees<jonathan.lees@unc.edu>
 }
 
+\examples{
+
+zip<-rnorm(15)
+nnz(zip)
+
+
+
+}
 \keyword{misc}

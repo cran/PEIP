@@ -25,4 +25,19 @@ Jonathan M. Lees<jonathan.lees@unc.edu>
 \seealso{dcost
 }
 
+
+\examples{
+
+x <- 1:4
+
+### compare fft with cosine transform
+     fft(x)
+    
+zig = dcost(x)
+zag = idcost(zig)
+
+}
+
+
+
 \keyword{misc}

@@ -26,5 +26,12 @@ Jonathan M. Lees<jonathan.lees@unc.edu>
 \note{if k=1, absolute value; k=2 2-norm (rms); k>2, largest singular value.
 }
 
+\examples{
+x = runif(10)
+
+Mnorm(x, k = 2)
+
+
+}
 
 \keyword{misc}

@@ -3,19 +3,19 @@
 \title{One-D Roughening
 }
 \description{
-  returns a 1D differentiating matrix operating on a series with n points.
+  Returns a 1D differentiating matrix operating on a series with n points.
 }
 \usage{
 get_l_rough(n, deg)
 }
 \arguments{
-  \item{n}{number of data points
+  \item{n}{integer, number of data points
 
 }
   \item{deg}{order of the derivative to approximate
 }
 }
-\details{Used to get first and 2nd order roughening matrices
+\details{Used to get first and 2nd order roughening matrices for 1-D problems
 }
 \value{Matrix:discrete differentiation matrix 
 }
@@ -25,5 +25,19 @@ get_l_rough(n, deg)
 \author{
 Jonathan M. Lees<jonathan.lees@unc.edu>
 }
+
+\examples{
+
+### first order roughening matrix for a 10 by 10 model: a sparse matrix
+N = 10
+L1 = get_l_rough(10,1);
+
+### second order roughening matrix for a 10 by 10 model
+N = 10
+L2 = get_l_rough(10,2);
+
+}
+
+
 
 \keyword{misc}

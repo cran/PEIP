@@ -35,4 +35,12 @@ Jonathan M. Lees<jonathan.lees@unc.edu>
 \seealso{chi, chi2cdf
 }
 
+\examples{
+x = seq(from=0.1, to=0.9, length=10) 
+h = chi2cdf(x, 3)
+
+chi2inv(h, 3)
+
+}
+
 \keyword{misc}

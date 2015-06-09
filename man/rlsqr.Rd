@@ -13,7 +13,7 @@ rlsqr(G=matrix(), u=vector(), wantse = 0, damp = 0, atol = 0,
 }
   \item{u}{data vector
 }
-  \item{wantse}{weighting?
+  \item{wantse}{logical, if standard estimates are desired
 }
   \item{damp}{Damping parameter
 }
@@ -31,10 +31,21 @@ rlsqr(G=matrix(), u=vector(), wantse = 0, damp = 0, atol = 0,
 \details{
   This code is an R wrapper for performing the LSQR
   routine by Paige and Saunders.  The LSQR program is a popular
-  inversion program for solving hte least squares problem, Ax=b.
+  inversion program for solving the least squares problem, Ax=b.
+  
   
 }
-\value{Solution vector
+\value{list:
+\item{x}{solution vector}
+\item{itn}{number of iterations}
+\item{xnorm}{An estimate of the norm of the final solution vector x}
+\item{rnorm}{norm(rbar), function being minimized} 
+\item{arnorm}{norm( Abar(transpose)*rbar),
+           norm of the residual for the usual normal equations}
+\item{acond}{An estimate of cond(Abar)} 
+\item{anorm}{An estimate of the Frobenius norm of  Abar}
+\item{istop}{reason for stopping:0=exact solution, 1=okay, 2=damp is zero,
+      3=damp is nonzero, 4=condition problem, 5=iteration limit reached}
 }
 \references{
   Paige, C., and Saunders, M.,
@@ -86,7 +97,7 @@ load('rtest.RDATA')
 # Blurring the image (DATA == d)
 #################################################
 
-d0=G%*%im
+d0=G \%*\% im
 d=d0
 
 

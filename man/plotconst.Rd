@@ -35,4 +35,14 @@ Jonathan M. Lees<jonathan.lees@unc.edu>
 \seealso{linesconst
 }
 
+\examples{
+
+zip = runif(25)
+plotconst(zip, 0, 1 )
+linesconst(runif(25) , 0, 1 , col='red' )
+
+
+
+}
+
 \keyword{misc}

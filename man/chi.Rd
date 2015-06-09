@@ -23,4 +23,14 @@ chi(x, n)
 Jonathan M. Lees<jonathan.lees@unc.edu>
 }
 
+\examples{
+
+x = seq(0, 10, length=100)
+n = 5
+y=chi(x, n)
+plot(x, y)
+
+
+}
+
 \keyword{misc}

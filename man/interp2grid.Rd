@@ -4,13 +4,13 @@
 \title{ Bilinear and Bicubic Interpolation to Grid }
 
 \description{
-  This code was includes bicubic interpolation and bilinear
-  interpolation adapted from Numerical Recipes in C: The are of
+  This code includesa  bicubic interpolation and a  bilinear
+  interpolation adapted from Numerical Recipes in C: The art of
   scientific computing \url{http://www.nrbook.com/nr3/} (chapter
   3... bicubic interpolation) and a bicubic interpolation from
   \url{http://www.paulinternet.nl/?page=bicubic} in java code.
   
-  Inputs are a list of points to interpolate to from raster objects of
+  Inputs are a list of points to interpolate to and from raster objects of
   class 'asc' (adehabitat package), 'RasterLayer' (raster package) or 'SpatialGridDataFrame' (sp package).
 }
 

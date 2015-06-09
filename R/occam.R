@@ -15,7 +15,7 @@ function( afun,ajac,L,d,m0,delta)
 
 ###  while we have not converged sufficiently or the data misfit is higher than 
 ###  allowed keep iterating
-  while((Vnorm(oldm-m)/Vnorm(m) >5.0e-3) | (mchi2 > delta^2*1.01))
+  while((Vnorm(oldm-m)/Vnorm(m) >5.0e-3) | (mchi2 > delta^2*1.01) )
     {
 ###  only allow 30 iterations
       iter=iter+1
@@ -35,7 +35,7 @@ function( afun,ajac,L,d,m0,delta)
       J=jacob(m)
 
 ###  get the dhat that is in equation 10.14
-      dhat=d-G+J %*% m 
+      dhat=d-G+  J %*% m 
       
 ###  This is a simple brute force way to do the line search.  Much more
 ###  sophisticated methods are available.  Note: we've restricted the line

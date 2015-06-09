@@ -27,4 +27,14 @@ Jonathan M. Lees<jonathan.lees@unc.edu>
 \seealso{erf
 }
 
+\examples{
+
+ x <- 1.0
+##   pracma::erf(x)
+ phi(x)
+phiinv( phi(x) )
+
+
+}
+
 \keyword{misc}

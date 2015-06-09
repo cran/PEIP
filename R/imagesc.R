@@ -22,3 +22,16 @@ imagesc <-
     
     
   }
+contoursc <- function (G, ...) 
+{
+    d = dim(G)
+    b = G[d[1]:1, ]
+    x = attr(G, "x")
+    y = attr(G, "y")
+    if (!is.null(x) & !is.null(y)) {
+        contour(x = x, y = y, z = t(b),  ...)
+    }
+    else {
+        contour(t(b),  ...)
+    }
+}

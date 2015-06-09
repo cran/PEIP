@@ -1,64 +1,65 @@
 GSVD <-
 function(A,B)
 {
+    ##  the author thanks Berend Hasselman  and Lapack authors
+    ## for help in preparing some of these wrappers
+    ## some of the code here has been adapted from package
+    ## geigen, by Hasselman
 
+    if(!is.matrix(A)) stop("Argument A should be a matrix")
+    if(!is.matrix(B)) stop("Argument B should be a matrix")
+  
+    
     # A=U*E1*Q'
     # B=V*E2*Q'
-    #dyn.load("/usr/local/lib64/R/lib/libRlapack.so")
+  
 
+    dimA = dim(A)
+    dimB = dim(B)
+    if(dimA[1]==0) stop("Matrix A has zero rows/columns")
+    if(dimB[1]==0) stop("Matrix B has zero rows/columns")
+    
+    if(!all(is.finite(A))) stop("Matrix A may not contain infinite/NaN/NA")
+    if(!all(is.finite(B))) stop("Matrix B may not contain infinite/NaN/NA")
 
-  SS = Sys.info()
-  ssysname = SS[[1]]
-  ##   LINUX = FALSE
+    ncolA = dimA[2]
+    nrowA = dimA[1]
+    ncolB = dimB[2]
+    nrowB = dimB[1]
 
+        
+    lwork = max(c(3*ncolA,nrowA,nrowB))+ncolA
+
+    ju = 2
+    jv = 2
+    jq = 2
 
   
- ###    if(ssysname=="Linux") LINUX = TRUE
-
-  if(ssysname=="Linux")
-    {
-     lpath=paste(R.home(),'/lib/libRlapack.so',sep='')
-   }
-  else
-    {
-     lpath=paste(R.home(),'lib/i386/libRlapack.dylib',sep='')
-   }
-
-
-  if(ssysname=="Windows")
-    {
-       lpath=R.home(component='bin')
-    lfile=list.files(lpath,pattern='lapack',full.names=TRUE)
-     
-   }
-      dyn.load(lpath)
-        #is.loaded("dggsvd") # returns TRUE  
-
-    z <- .Fortran("dggsvd",
-
-        as.character('U'),
-        as.character('V'),
-        as.character('Q'),
-        as.integer(nrow(A)),
-        as.integer(ncol(A)),
-        as.integer(nrow(B)),
-        integer(1),
-        integer(1),
-        as.double(A),
-        as.integer(nrow(A)),
-        as.double(B),
-        as.integer(nrow(B)),
-        double(ncol(A)),
-        double(ncol(A)),
-        double(nrow(A)*nrow(A)),
-        as.integer(nrow(A)),
-        double(nrow(B)*nrow(B)),
-        as.integer(nrow(B)),
-        double(ncol(A)*ncol(A)),
-        as.integer(ncol(A)),
-        double(max(c(3*ncol(A),nrow(A),nrow(B)))+ncol(A)),
-        integer(ncol(A)),
-        integer(1),dup=FALSE)
+    z <- .Fortran("zdggsvd",
+                  as.integer(ju),
+                  as.integer(jv),
+                  as.integer(jq),
+                  as.integer(nrowA),
+                  as.integer(ncolA),
+                  as.integer(nrowB),
+                  integer(1),
+                  integer(1),
+                  as.double(A),
+                  as.integer(nrowA),
+                  as.double(B),
+                  as.integer(nrowB),
+                  double(ncolA),
+                   double(ncolA),
+                   double(nrowA*nrowA),
+                  as.integer(nrowA),
+                  double(nrowB*nrowB),
+                  as.integer(nrowB),
+                   double(ncolA*ncolA),
+                  as.integer(ncolA),
+                  double(lwork),
+                  integer(ncolA),
+                  integer(1) ,dup=FALSE,
+                  PACKAGE="PEIP")
 
     K=z[7][[1]]
     L=z[8][[1]]

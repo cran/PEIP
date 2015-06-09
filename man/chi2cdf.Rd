@@ -32,4 +32,10 @@ chi2cdf(x, n)
 Jonathan M. Lees<jonathan.lees@unc.edu>
 }
 
+\examples{
+x= seq(from=0.1, to=0.9, length=20)
+chi2cdf(x , 3)
+
+}
+
 \keyword{misc}

@@ -16,7 +16,7 @@ Ainv(GAB, x, tol = 1e-12)
 }
 }
 \details{
-  need something to make up for the lame-o matlab code that does this h = G\\x to get the inverse
+  I needed something to make up for the lame-o matlab code that does this h = G\\x to get the inverse
 }
 \value{
   Inverse Solution
@@ -24,6 +24,18 @@ Ainv(GAB, x, tol = 1e-12)
 
 \author{
 Jonathan M. Lees<jonathan.lees@unc.edu>
+}
+\examples{
+set.seed(2015)
+GAB = matrix(runif(36), ncol=6)
+truex =rnorm(ncol(GAB))
+rhs = GAB \%*\% truex
+
+rhs = as.vector(rhs )
+
+tout = Ainv(GAB, rhs, tol = 1e-12)
+tout - truex 
+
 }
 
 \keyword{misc}

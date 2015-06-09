@@ -4,16 +4,18 @@ function(A,b,c,delta,l,u)
  ##  require(bvls)
   ZEE = bvls::bvls(A,b,l,u)
   x0=ZEE$x
+  
   gamma0=t(c) %*% x0
   alpha=1.0e-3
   
 ###  First, make sure that || A x0 - b || <= delta.  If not, then the problem
 ###  is just infeasible.
   
+  vtest = Vnorm(A %*% x0 - b)
   
-  if(Vnorm(A %*% x0 - b) > delta)
+  if(vtest > delta)
     {
-      print("problem is just infeasible")
+      print(paste("problem is just infeasible", vtest , " > ", delta ))
       
       xmin=NULL
       xmax=NULL
@@ -108,7 +110,7 @@ function(A,b,c,delta,l,u)
 
       ZEE = bvls::bvls(G,d,l,u)
       xgamma=ZEE$x
-      xgammanorm=Vnorm(A*xgamma-b)
+      xgammanorm=Vnorm(A %*% xgamma-b)
     } 
   right=step
 
