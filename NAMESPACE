@@ -1,6 +1,11 @@
-# Export all names
 exportPattern(".")
-useDynLib(PEIP)
 import(bvls, Matrix)
+importFrom(geigen, gsvd)
 importFrom(pracma, rem, inv, sqrtm)
 importFrom(RSEIS, logspace)
+importFrom(fields, interp.surface.grid)
+importFrom("grDevices", "grey")
+importFrom("graphics", "contour", "lines", "par", "plot", "points",
+             "segments")
+importFrom("stats", "fft", "pchisq", "pnorm", "qchisq", "qnorm", "qt",
+             "rnorm", "runif")

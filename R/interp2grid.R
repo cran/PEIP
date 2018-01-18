@@ -31,8 +31,13 @@ interp2grid <-
     
 
 #######do the interpolation
-    out = .Call('interp2grid',mat,mat.x,mat.y,xout,yout,as.integer(type))
-    out = matrix(out,nrow=length(yout),byrow=FALSE)
+#####  out = .C( CALL_jinterp2grid, mat,mat.x,mat.y,xout,yout,as.integer(type))
+input.obj = list(x=as.vector(mat.x), y=as.vector(mat.y), z=mat )
+
+    Fout     = fields::interp.surface.grid(input.obj, list(x=xout, y=yout)  )
+
+    ###out = matrix(out,nrow=length(yout),byrow=FALSE)
+    out = Fout$z
     rownames(out)=yout;colnames(out)=xout
 
 #######return the value

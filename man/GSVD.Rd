@@ -8,8 +8,8 @@
 GSVD(A, B)
 }
 \arguments{
-  \item{A}{U*C*t(X), see below }
-  \item{B}{V*S*t(X), see below }
+  \item{A}{Matrix, see below }
+  \item{B}{Matrix, see below }
 }
 
 \value{
@@ -20,6 +20,9 @@ GSVD(A, B)
   \item{S}{singular values, p by n diagonal matrix}
 }
 \details{
+
+The A and B matrices will be, A=U*C*t(X) and B=V*S*t(X), respectively.
+
 Since PEIP is based on a book, which is iteslef based on MATLAB routines,
 the convention here follows the book.  The R implementation uses LAPACK
 and wraps the function so the output will comply with the book.  See page
@@ -38,13 +41,24 @@ where lambda = sqrt(diag(t(C)*C) ) and mu = sqrt(diag(t(S)*S) ).
 \seealso{flipGSVD}
 
 \examples{
-set.seed(11)
 
-n <- 5
-A <- matrix(runif(n*n),nrow=n)
-B <- matrix(runif(n*n),nrow=n)
+# Example from NAG F08VAF
 
-g = GSVD(A, B)
+A <- matrix(1:15, nrow=5,ncol=3)
+ B <- matrix(c(8,1,6,
+               3,5,7,
+               4,9,2), nrow=3, byrow=TRUE)
+
+z <- GSVD(A,B)
+C <- z$C
+S <- z$S
+sqrt(diag(t(C) \%*\% C)) / sqrt(diag(t(S) \%*\% S))
+testA = A - z$U \%*\% C \%*\% t(z$X)
+testB = B - z$V \%*\% S \%*\% t(z$X)
+
+print(testA)
+print(testB)
+
 
 }
 
