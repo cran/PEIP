@@ -39,7 +39,7 @@ function( Gmat,dee,niter)
 ###   Update beta.
       if(k>1)
         {
-          beta= rtr /  (t(prevr) %*% prevr)
+          beta= as.vector( rtr /  (t(prevr) %*% prevr) )
         } #
 
 ###   Update p

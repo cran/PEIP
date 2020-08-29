@@ -64,7 +64,7 @@ function(A,b,tolr,tolx,p,maxiter)
   if(Mnorm(newx-x)/(1+Mnorm(x)) < tolx)
     {
       x = newx;
-      return;
+      return(x);
     }
   else
     {

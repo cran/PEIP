@@ -1,4 +1,4 @@
-2be51b7c78d64cf83b7a86dc4888060e *DESCRIPTION
+0ed9dff80cc9a6969b053e92227f746a *DESCRIPTION
 0d3d0b1a65695ec883bc790e8ed6ed38 *NAMESPACE
 73bed0dd2e80d88854b1a9f71d7125fe *R/Ainv.R
 f870945fa0739a8faccd30680a090b29 *R/GSVD.R
@@ -9,7 +9,7 @@ a84b5b2be6e0ae8e47087aad160ab047 *R/USV.R
 51660d0fe38bc02da79166ce8d7ba7c1 *R/bartl.R
 7cda8e89f6ac57ed9c311cc78ff12a71 *R/bayes.R
 67002750d02f857bf58ca2cd99a6ffb9 *R/blf2.R
-431c175e970f3a1ce6fd95d98a1a1bd0 *R/cgls.R
+feadb379ee2c1810d90933dad26af2e2 *R/cgls.R
 311bc452b98c4379c7e46aea52bb6837 *R/chi.R
 53b5f0bed7842f8b439593ffcb766ca9 *R/chi2cdf.R
 c2717ad086d676c83455e74542d479cc *R/chi2inv.R
@@ -23,7 +23,7 @@ a089b249c2adf7d020ad130e9b713cef *R/get_l_rough.R
 b2d25ae8fd02dbf102b12eaa0c6589ea *R/idcost.R
 47187b81d9a6feb04227880c1754f4b3 *R/imagesc.R
 74f709a1db9d0adbeb0a702ef9662f92 *R/interp2grid.R
-08decca9e020c03219972a1312f3c52d *R/irls.R
+ffbfef3e0b7a021fce5e4063cd2d13a8 *R/irls.R
 67aac04642988345c56c3fb57884b86d *R/irlsl1reg.R
 d9f6ef8f9480f34b25390be023ab097c *R/kac.R
 accb46d47b597b051b33169aae4dce6c *R/l_curve_corner.R
