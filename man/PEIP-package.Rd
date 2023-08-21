@@ -11,13 +11,6 @@
   on inverse theory.
 }
 \details{
-\tabular{ll}{
-Package: \tab PEIP\cr
-Type: \tab Package\cr
-Version: \tab 1.3\cr
-Date: \tab 2012-07-30\cr
-License: \tab GPL\cr
-}
 
 These functions are used in conjunction with the example described in
 the PEIP book.

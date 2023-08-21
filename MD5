@@ -1,4 +1,4 @@
-0ed9dff80cc9a6969b053e92227f746a *DESCRIPTION
+c700424ab92caf4047ec580fbd78d235 *DESCRIPTION
 0d3d0b1a65695ec883bc790e8ed6ed38 *NAMESPACE
 73bed0dd2e80d88854b1a9f71d7125fe *R/Ainv.R
 f870945fa0739a8faccd30680a090b29 *R/GSVD.R
@@ -35,7 +35,7 @@ f019b284f77a9a9c187e5bcfce55b586 *R/lmarq.R
 f5eb993414e28d083b5c54f25ab13dbf *R/loadMAT.R
 cdcb6fbe1be43fe5b1e86a1165310746 *R/mcmc.R
 41b3793952f6f2a153a62ead56f65410 *R/nnz.R
-82fcd6d5b9a038471f4ba70bb183b86b *R/occam.R
+5614f5483424fa479374fe1361df3776 *R/occam.R
 f3c5ef57420d6bfc238b2ee22a87eb4f *R/phi.R
 e8c6e310af0fe973eeeb014ba41162dd *R/phiinv.R
 25701cb55883be2b2f71ca8a2a44a5fd *R/picard_vals.R
@@ -50,7 +50,7 @@ a75118dc0155c19cb3a7d703f031067e *R/vspprofile.R
 d496061db031bd07473ef76373f4db63 *man/Ainv.Rd
 27bc2841441ce95fe7f771e72936e17f *man/GSVD.Rd
 f4102809f85c0343ff31ce2c1325cc88 *man/Mnorm.Rd
-776e8ef49e6bdd98ad8529adf49be98d *man/PEIP-package.Rd
+04b24ca284695af3bec2762233f3fe0d *man/PEIP-package.Rd
 6f06a87cc3a76b502534228c41976c97 *man/USV.Rd
 d0f576160fbc12a3eed7c96cfec0494b *man/Vnorm.Rd
 7c98779335fc837c91f1dbee14edd9ce *man/art.Rd
@@ -76,7 +76,7 @@ c3b61ae7ca3c1b62d0f495873fe72f8b *man/imagesc.Rd
 dec91dee8cc8b2efbc87b86d04c904bf *man/kac.Rd
 57228caffd7a8c1f12a93d16e888ce5d *man/l_curve_corner.Rd
 aaf226c115461306108d5605d168c70c *man/l_curve_tgsvd.Rd
-f5b87844d6f0c9eaf1b2c8b3e981bf0f *man/l_curve_tikh_gsvd.Rd
+07a70881163ca6d8c0b4b221ff693814 *man/l_curve_tikh_gsvd.Rd
 549b890e61707e57b1a97bd4e63422dc *man/l_curve_tikh_svd.Rd
 004dbfcade457d702e6e1e15620a48a1 *man/linesconst.Rd
 6af38895aa766e972e47442a45e22af3 *man/lmarq.Rd

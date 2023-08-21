@@ -54,7 +54,7 @@ function( afun,ajac,L,d,m0,delta)
 ###  if M is not terribly conditioned
           if( Matrix::condest(M)$est < 1.0e15  )
             {
-              m= as.vector( solve( t(J)%*%J+alphas[i]^2*t(L)%*%L  ) %*%   t(J) %*% dhat )
+              m= as.vector( Matrix::solve( t(J)%*%J+alphas[i]^2*t(L)%*%L  ) %*%   t(J) %*% dhat )
 
 
               

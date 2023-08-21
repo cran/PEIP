@@ -22,7 +22,7 @@ l_curve_tikh_gsvd(U, d, X, Lam, Mu, G, L, npoints, varargin = NULL)
 }
   \item{L}{roughening matrix
 }
-  \item{npoints}{
+  \item{npoints}{Number of points
 }
 \item{varargin}{
 alpha_min, alpha_max: if specified, constrain the logrithmically spaced
